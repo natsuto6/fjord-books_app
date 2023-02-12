@@ -189,3 +189,10 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  books:
+    index:
+      title: 書籍
+    new:
+      title: 書籍の登録
+    edit:
+      title: 書籍の編集
