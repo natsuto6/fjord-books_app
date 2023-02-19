@@ -43,7 +43,7 @@ class BooksController < ApplicationController
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to @book, notice: t('flash.edit', model: @book.model_name.human) }
-        format.json { render :show, status: :ok, location: @book.model_name.human }
+        format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }
         format.json { render json: @book.errors, status: :unprocessable_entity }
