@@ -203,8 +203,8 @@ ja:
     edit:
       title: 書籍の編集
   flash:
-    new: 書籍が正常に登録されました。
-    edit: 書籍が正常に更新されました。
-    deletion: 書籍が正常に削除されました。
+    new: "%{model}が正常に登録されました。"
+    edit: "%{model}が正常に更新されました。"
+    deletion: "%{model}が正常に削除されました。"
     confirm:
       deletion: 本当に削除してもよろしいですか？

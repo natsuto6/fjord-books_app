@@ -237,8 +237,8 @@ en:
     edit:
       title: Book Editing
   flash:
-    new: Book has been successfully registered.
-    edit: Book has been successfully updated.
-    deletion: Book was successfully deleted.
+    new: "%{model} has been successfully registered."
+    edit: "%{model} has been successfully updated."
+    deletion: "%{model} was successfully deleted."
     confirm:
       deletion: Are you sure you want to delete it?
