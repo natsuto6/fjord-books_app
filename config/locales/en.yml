@@ -230,8 +230,6 @@ en:
       short: "%d %b %H:%M"
     pm: pm
   books:
-    index:
-      title: Books
     new:
       title: New Book
     edit:

@@ -196,8 +196,6 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   books:
-    index:
-      title: 書籍
     new:
       title: 書籍の登録
     edit:
