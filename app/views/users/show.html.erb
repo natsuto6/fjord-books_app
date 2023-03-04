@@ -1,5 +1,12 @@
 <h1><%= t('views.common.title_show', name: User.model_name.human) %></h1>
 
+<% if @user.avatar.attached? %>
+  <p>
+    <strong>アイコン画像:</strong>
+    <%= image_tag @user.avatar %>
+  </p>
+<% end %>
+
 <p>
   <strong><%= User.human_attribute_name(:email) %>:</strong>
   <%= @user.email %>
