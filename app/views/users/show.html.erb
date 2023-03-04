@@ -2,7 +2,7 @@
 
 <% if @user.avatar.attached? %>
   <p>
-    <strong>アイコン画像:</strong>
+    <strong><%= User.human_attribute_name(:avatar) %>:</strong>
     <%= image_tag @user.avatar.variant(resize_to_fit: [50, 50]) %>
   </p>
 <% end %>
