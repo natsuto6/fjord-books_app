@@ -42,3 +42,8 @@ yarn-debug.log*
 
 /public/uploads/*
 .env
+
+# Ignore assets,helpers,test directory.
+/app/assets
+/app/helpers
+/test

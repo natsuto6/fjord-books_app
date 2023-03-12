@@ -1,0 +1,7 @@
+ja:
+  devise:
+    registrations:
+      edit:
+        profile: プロフィール編集
+    sessions:
+      sign_out: ログアウト
