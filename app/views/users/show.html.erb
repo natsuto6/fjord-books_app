@@ -34,7 +34,8 @@
 </p>
 
 <p>
-  <%= render 'stats' %>
+  <%= render 'stats', user: @user %>
+  <%= render 'follow_form', user: @user %>
 </p>
 
 <% if current_user == @user %>
