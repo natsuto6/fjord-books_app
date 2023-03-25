@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[show edit update destroy]
+  before_action :set_report, only: %i[show]
+  before_action :check_user, only: %i[edit update destroy]
 
   def index
     @reports = Report.all
@@ -16,7 +17,7 @@ class ReportsController < ApplicationController
   def edit; end
 
   def create
-    @report = Report.new(report_params)
+    @report = current_user.reports.build(report_params)
 
     if @report.save
       redirect_to report_url(@report), notice: 'Report was successfully created.'
@@ -48,4 +49,8 @@ class ReportsController < ApplicationController
   def report_params
     params.require(:report).permit(:title, :content)
   end
+end
+
+def check_user
+  @report = current_user.reports.find_by!(id: params[:id])
 end
