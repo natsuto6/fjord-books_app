@@ -1,14 +1,14 @@
 <div>
-  <a href="<%= following_user_path(user) %>">
+  <%= link_to following_user_path(user) do %>
     <strong>
       <%= user.following.count %>
     </strong>
     following
-  </a>
-  <a href="<%= followers_user_path(user) %>">
+  <% end %>
+  <%= link_to followers_user_path(user) do %>
     <strong>
       <%= user.followers.count %>
     </strong>
     followers
-  </a>
+  <% end %>
 </div>
