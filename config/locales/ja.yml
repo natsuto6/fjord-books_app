@@ -224,6 +224,10 @@ ja:
       previous: '前'
       next: '次'
       truncate: '...'
+    follow:
+      stats:
+        following: 'フォロー'
+        followers: 'フォロワー'
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
@@ -238,3 +242,10 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+  users:
+    following:
+      index:
+        title: "フォロー"
+    followers:
+      index:
+        title: "フォロワー"
