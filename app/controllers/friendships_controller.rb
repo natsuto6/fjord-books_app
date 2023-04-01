@@ -1,21 +1,30 @@
 # frozen_string_literal: true
 
 class FriendshipsController < ApplicationController
-  before_action :other_user
+  before_action :set_user
 
   def create
-    current_user.active_friendships.create!(followed: @other_user)
-    redirect_to @other_user
+    friendship = current_user.active_friendships.new(followed: @user)
+    if friendship.save
+      redirect_to @user, notice: t('.notice')
+    else
+      redirect_to @user, alert: t('.alert')
+    end
   end
 
   def destroy
-    current_user.active_friendships.find(params[:id]).destroy
-    redirect_to @other_user
+    friendship = current_user.active_friendships.find_by(params[:id])
+    if friendship
+      friendship.destroy
+      redirect_to @user, notice: t('.notice')
+    else
+      redirect_to @user, alert: t('.alert')
+    end
   end
 
   private
 
-  def other_user
-    @other_user = User.find(params[:user_id])
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end

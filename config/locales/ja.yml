@@ -249,3 +249,13 @@ ja:
     followers:
       index:
         title: "フォロワー"
+    follow_form:
+      create: "フォローする"
+      destroy: "フォロー解除"
+  friendships:
+    create:
+      notice: "フォローしました"
+      alert: "フォローに失敗しました"
+    destroy:
+      notice: "フォロー解除しました"
+      alert: "フォロー解除に失敗しました"

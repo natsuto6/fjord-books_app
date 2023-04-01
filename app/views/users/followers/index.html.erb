@@ -1,4 +1,4 @@
-<h1><%= t('.title') %></h1>
+<h3><%= t('.title') %></h3>
 <p><%= User.model_name.human %>: <%= link_to @user.name, @user %></p>
 <%= render 'users/users', users: @followers %>
 <%= link_to t('views.common.back'), @user %>

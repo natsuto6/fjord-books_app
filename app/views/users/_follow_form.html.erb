@@ -1,12 +1,8 @@
 <% unless user == current_user %>
   <% if current_user.following?(user) %>
     <% friendship = current_user.active_friendships.find_by(followed: user) %>
-    <%= form_with(model: [user, friendship], method: :delete, local: true) do |f| %>
-      <%= f.submit 'Unfollow' %>
-    <% end %>
+    <%= button_to t('.destroy'), user_friendship_path(user, friendship), method: :delete %>
   <% else %>
-    <%= form_with(model: [user, current_user.active_friendships.build], local: true) do |f| %>
-      <%= f.submit 'Follow' %>
-    <% end %>
+    <%= button_to t('.create'), user_friendships_path(user), method: :post %>
   <% end %>
 <% end %>
