@@ -1,13 +1,13 @@
 <div>
-  <%= link_to user_following_index_path(@user) do %>
+  <%= link_to user_following_index_path(user) do %>
     <strong>
-      <%= t('views.follow.stats.following') %><%= user.following.count %>
+      <%= t('views.follow.stats.following') %><%= user.following.size %>
     </strong>
   <% end %>
   &nbsp;
   <%= link_to user_followers_path(user) do %>
     <strong>
-      <%= t('views.follow.stats.followers') %><%= user.followers.count %>
+      <%= t('views.follow.stats.followers') %><%= user.followers.size %>
     </strong>
   <% end %>
 </div>

@@ -14,8 +14,7 @@ class FriendshipsController < ApplicationController
 
   def destroy
     friendship = current_user.active_friendships.find_by(params[:id])
-    if friendship
-      friendship.destroy
+    if friendship&.destroy
       redirect_to @user, notice: t('.notice')
     else
       redirect_to @user, alert: t('.alert')
