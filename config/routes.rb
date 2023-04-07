@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :books
   resources :users, only: %i[index show] do
     resources :friendships, only: %i[create destroy]
-    resources :following, only: %i[index], module: :users
+    resources :followings, only: %i[index], module: :users
     resources :followers, only: %i[index], module: :users
   end
 end

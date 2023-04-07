@@ -1,7 +1,7 @@
 <div>
-  <%= link_to user_following_index_path(user) do %>
+  <%= link_to user_followings_path(user) do %>
     <strong>
-      <%= t('views.follow.stats.following') %><%= user.following.size %>
+      <%= t('views.follow.stats.followings') %><%= user.followings.size %>
     </strong>
   <% end %>
   &nbsp;

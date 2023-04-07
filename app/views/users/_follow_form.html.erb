@@ -1,5 +1,5 @@
 <% unless user == current_user %>
-  <% if current_user.following?(user) %>
+  <% if current_user.followings?(user) %>
     <% friendship = current_user.active_friendships.find_by(followed: user) %>
     <%= button_to t('.destroy'), user_friendship_path(user), method: :delete %>
   <% else %>

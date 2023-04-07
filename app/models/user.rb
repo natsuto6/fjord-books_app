@@ -14,10 +14,10 @@ class User < ApplicationRecord
                                  foreign_key: 'followed_id',
                                  dependent: :destroy,
                                  inverse_of: :followed
-  has_many :following, through: :active_friendships, source: :followed
+  has_many :followings, through: :active_friendships, source: :followed
   has_many :followers, through: :passive_friendships, source: :follower
 
-  def following?(user)
-    following.include?(user)
+  def followings?(user)
+    followings.include?(user)
   end
 end

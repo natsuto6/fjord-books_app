@@ -226,7 +226,7 @@ ja:
       truncate: '...'
     follow:
       stats:
-        following: 'フォロー'
+        followings: 'フォロー'
         followers: 'フォロワー'
   controllers:
     common:
@@ -243,7 +243,7 @@ ja:
       edit:
         title: "アカウント編集"
   users:
-    following:
+    followings:
       index:
         title: "フォロー"
     followers:
