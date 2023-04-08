@@ -1,0 +1,5 @@
+<h3>コメント</h3>
+<%= form_with model: [commentable, comment] do |f| %>
+  <%= f.text_field :content, required: true %>
+  <%= f.submit %>
+<% end %>
