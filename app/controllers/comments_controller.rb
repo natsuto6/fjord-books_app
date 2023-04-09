@@ -7,6 +7,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @commentable
     else
+      @comments = @commentable.CommentsController
+      render_commentable_show
     end
   end
 
