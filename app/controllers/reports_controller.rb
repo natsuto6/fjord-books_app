@@ -10,6 +10,7 @@ class ReportsController < ApplicationController
 
   def show
     @comment = Comment.new
+    @comments = @report.comments
   end
 
   def new
