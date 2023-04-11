@@ -1,0 +1,7 @@
+<% unless user == current_user %>
+  <% if current_user.followings?(user) %>
+    <%= button_to t('.destroy'), user_friendship_path(user), method: :delete %>
+  <% else %>
+    <%= button_to t('.create'), user_friendship_path(user), method: :post %>
+  <% end %>
+<% end %>
