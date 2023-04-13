@@ -1,5 +1,19 @@
-<h3>コメント一覧</h3>
-<% @comments.each do |comment| %>
-  <p>コメント:<%= comment.content %></p>
-  <p>投稿日時:<%= comment.created_at %></p>
-<% end %>
+<div class="comments-container">
+  <strong><%= Comment.model_name.human %>:</strong>
+  <% if comments.any? %>
+    <ul>
+      <% @comments.each do |comment| %>
+        <% if comment.persisted? %>
+          <li>
+            <%= comment.content %>
+            <small>
+              (<%= link_to comment.user.name_or_email, comment.user %> - <%= l comment.created_at, format: :short %>)
+            </small>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% else %>
+    (<%= t('.no_comments') %>)
+  <% end %>
+</div>
