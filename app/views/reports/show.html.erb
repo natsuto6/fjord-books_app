@@ -15,5 +15,6 @@
 <% end %>
 <%= link_to t('views.common.back'), reports_path %>
 
-<%= render 'comments/comments', comments: @comments %>
+<%= render 'comments/comments', commentable: @report, comments: @comments %>
+
 <%= render 'comments/form', commentable: @report, comment: @comment %>
