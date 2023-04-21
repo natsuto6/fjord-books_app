@@ -52,8 +52,8 @@ class ReportsController < ApplicationController
   def report_params
     params.require(:report).permit(:title, :content)
   end
-end
 
-def check_user
-  @report = current_user.reports.find_by!(id: params[:id])
+  def check_user
+    @report = current_user.reports.find_by!(id: params[:id])
+  end
 end

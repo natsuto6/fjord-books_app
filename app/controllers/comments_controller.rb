@@ -25,9 +25,12 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment.destroy
-
-    redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
+    if @comment.user == current_user
+      @comment.destroy
+      redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
+    else
+      redirect_to @commentable, alert: t('controllers.common.alert_not_authorized')
+    end
   end
 
   private
