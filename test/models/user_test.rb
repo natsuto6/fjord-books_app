@@ -63,5 +63,4 @@ class UserTest < ActiveSupport::TestCase
 
     assert_equal 'john@example.com', @user.name_or_email
   end
-
 end
