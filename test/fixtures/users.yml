@@ -1,14 +1,14 @@
-one:
-  email: one@example.com
+john:
+  email: john@example.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-  name: John
+  name: john
 
-two:
-  email: two@example.com
+mike:
+  email: mike@example.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-  name: Mike
+  name: mike
 
-three:
-  email: three@example.com
+alice:
+  email: alice@example.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-  name: Alice
+  name: alice

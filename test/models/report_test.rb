@@ -4,19 +4,16 @@ require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
   def setup
-    @user = users(:one)
-    @report = reports(:report1)
+    @john = users(:john)
+    @john_report = reports(:john_report)
   end
 
-  test 'editable? should return true when the target user is the same as the report owner' do
-    assert @report.editable?(@user)
-  end
-
-  test 'editable? should return false when the target user is different from the report owner' do
-    assert_not @report.editable?(users(:two))
+  test 'editable? returns true if the target user is the owner of the report' do
+    assert @john_report.editable?(@john)
+    assert_not @john_report.editable?(users(:mike))
   end
 
   test 'created_on should return the date of the report creation' do
-    assert_equal @report.created_at.to_date, @report.created_on
+    assert_equal '2023/05/07', I18n.l(@john_report.created_on)
   end
 end
