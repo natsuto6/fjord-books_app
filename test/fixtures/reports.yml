@@ -1,10 +1,10 @@
 john_report:
-  title: john Report
-  content: This is a john report
+  title: John's Report
+  content: This is John's report
   user: john
   created_at: <%= Time.new(2023, 05, 07) %>
 
 mike_report:
-  title: mike Report
-  content: This is a mike report
+  title: Mike's Report
+  content: This is Mike's report
   user: mike

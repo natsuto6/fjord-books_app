@@ -34,8 +34,8 @@ class ReportsTest < ApplicationSystemTestCase
     visit reports_url
     click_link '詳細', match: :first
 
-    assert_text 'john Report'
-    assert_text 'This is a john report'
+    assert_text "John's Report"
+    assert_text "This is John's report"
 
     click_on '編集', match: :prefer_exact
     fill_in 'タイトル', with: 'ジョンのレポート'
@@ -55,6 +55,6 @@ class ReportsTest < ApplicationSystemTestCase
     end
 
     assert_text '日報が削除されました。'
-    assert_no_text 'john Report'
+    assert_no_text "John's Report"
   end
 end

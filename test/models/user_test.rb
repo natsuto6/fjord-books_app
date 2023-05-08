@@ -43,10 +43,10 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'name_or_email should return name if present' do
-    @user.name = 'john'
+    @user.name = 'John'
     @user.email = 'john@example.com'
 
-    assert_equal 'john', @user.name_or_email
+    assert_equal 'John', @user.name_or_email
   end
 
   test 'name_or_email should return email if name is not present' do
