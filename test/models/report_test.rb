@@ -14,6 +14,6 @@ class ReportTest < ActiveSupport::TestCase
   end
 
   test 'created_on should return the date of the report creation' do
-    assert_equal '2023/05/07', I18n.l(@john_report.created_on)
+    assert_equal Time.current.to_date, @john_report.created_on
   end
 end

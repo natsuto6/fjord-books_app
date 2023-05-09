@@ -4,55 +4,48 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = users(:john)
+    @john = users(:john)
+    @mike = users(:mike)
+    @alice = users(:alice)
   end
 
   test 'following? should return true if user is being followed' do
-    user_to_follow = users(:mike)
-    @user.follow(user_to_follow)
-
-    assert @user.following?(user_to_follow)
+    @john.follow(@mike)
+    assert @john.following?(@mike)
   end
 
   test 'following? should return false if user is not being followed' do
-    user_not_to_follow = users(:alice)
-
-    assert_not @user.following?(user_not_to_follow)
+    assert_not @john.following?(@alice)
   end
 
   test 'followed_by? should return true if user is being followed by another user' do
-    user_follower = users(:mike)
-    user_follower.follow(@user)
-
-    assert @user.followed_by?(user_follower)
+    @mike.follow(@john)
+    assert @john.followed_by?(@mike)
   end
 
   test 'followed_by? should return false if user is not being followed by another user' do
-    user_non_follower = users(:alice)
-
-    assert_not @user.followed_by?(user_non_follower)
+    assert_not @john.followed_by?(@alice)
   end
 
   test 'unfollow should destroy a relationship' do
-    user_to_unfollow = users(:mike)
-    @user.follow(user_to_unfollow)
-    assert @user.following?(user_to_unfollow)
+    @john.follow(@mike)
+    assert @john.following?(@mike)
 
-    @user.unfollow(user_to_unfollow)
-    assert_not @user.following?(user_to_unfollow)
+    @john.unfollow(@mike)
+    assert_not @john.following?(@mike)
   end
 
   test 'name_or_email should return name if present' do
-    @user.name = 'John'
-    @user.email = 'john@example.com'
+    @john.name = 'John'
+    @john.email = 'john@example.com'
 
-    assert_equal 'John', @user.name_or_email
+    assert_equal 'John', @john.name_or_email
   end
 
   test 'name_or_email should return email if name is not present' do
-    @user.name = nil
-    @user.email = 'john@example.com'
+    @john.name = nil
+    @john.email = 'john@example.com'
 
-    assert_equal 'john@example.com', @user.name_or_email
+    assert_equal 'john@example.com', @john.name_or_email
   end
 end

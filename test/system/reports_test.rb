@@ -50,6 +50,8 @@ class ReportsTest < ApplicationSystemTestCase
   test 'destroying a Report' do
     visit reports_url
 
+    assert_text "John's Report"
+
     page.accept_confirm do
       click_on '削除', match: :first
     end
