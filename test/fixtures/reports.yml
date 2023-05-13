@@ -1,11 +1,9 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+john_report:
+  title: John's Report
+  content: This is John's report
+  user: john
 
-one:
-  user: one
-  title: MyString
-  content: MyText
-
-two:
-  user: two
-  title: MyString
-  content: MyText
+mike_report:
+  title: Mike's Report
+  content: This is Mike's report
+  user: mike
